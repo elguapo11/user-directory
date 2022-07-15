@@ -4,6 +4,7 @@ import UserCard from './UserCard'
 import data from '../data'
 
 const Main = () => {
+    console.log({data})
     return (
         <>
             <Header/>

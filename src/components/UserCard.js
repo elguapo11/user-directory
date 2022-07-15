@@ -5,6 +5,8 @@ import data from '../data'
 
 const UserCard = (props) => {
 
+    console.log(props)
+
   const users = props.data.slice(0, data.length)
   const [index, setIndex] = useState(0)
   let [show, setShow] = useState(false)
@@ -37,8 +39,13 @@ const UserCard = (props) => {
 
   const deleteUser = () => {
     data.splice(index, 1)
-    index <= data.length - 1 ? setIndex(index + 1) : setIndex(index - 1)
-  }
+    // index <= data.length - 1 ? setIndex(index + 1) : setIndex(index - 1)
+    if (index <= data.length -1) {
+        setIndex(index + 1) 
+    } else {
+        setIndex(index -1)
+    }
+}
 
   const addUser = (e) => {
     e.preventDefault()
